@@ -28,6 +28,7 @@ console.log("Minted NFT Name :"+_name);
 // and print their metadata with console.log()
 function listNFTs () {
 for(var i=0;i<nftArray.length;i++){
+   console.log("\n");
    console.log("NFT ID :"+(i+1));
    console.log("NFT Name: "+nftArray[i].Name);
    console.log("NFT Symbol: "+nftArray[i].Symbol);
