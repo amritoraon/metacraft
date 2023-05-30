@@ -9,24 +9,43 @@ Assessment Requirements
 */
 
 // create a variable to hold your NFT's
-
+const nftArray=[];
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT () {
-
+function mintNFT (_name,_symbol,_cost,_bling) {
+const nftObj={
+   "Name":_name,
+   "Symbol":_symbol,
+   "Cost":_cost,
+   "Bling":_bling,
+}
+nftArray.push(nftObj);
+console.log("Minted NFT Name :"+_name);
 }
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
-
+for(var i=0;i<nftArray.length;i++){
+   console.log("NFT ID :"+(i+1));
+   console.log("NFT Name: "+nftArray[i].Name);
+   console.log("NFT Symbol: "+nftArray[i].Symbol);
+   console.log("NFT COST: "+nftArray[i].Cost);
+   console.log("NFT Bling: "+nftArray[i].Bling);
+}
 }
 
 // print the total number of NFTs we have minted to the console
 function getTotalSupply() {
-
+console.log("Number of NFT: "+nftArray.length);
 }
 
 // call your functions below this line
-
+mintNFT("abc","!",1,"Silver");
+mintNFT("def","@",1,"Gold");
+mintNFT("xyz","#",1,"Bronz");
+console.log("\n");
+getTotalSupply();
+console.log("\n");
+listNFTs();
